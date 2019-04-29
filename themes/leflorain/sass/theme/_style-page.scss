@@ -1,0 +1,127 @@
+.wrap {
+  width:100%;
+  max-width: 1366px;
+  height: 100%;
+  margin:auto;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  .pagination {
+    h2.screen-reader-text {
+      display: none;
+    }
+    .nav-links {
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0 15px;
+      .page-numbers {
+        border: 1px solid #dadada;
+        background-color: #fff;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin: 0 0 1.5em;
+        overflow: hidden;
+        font-size:12px;
+      }
+      .prev {
+        float: left;
+      }
+      .next {
+        float: right;
+
+      }
+      }
+  }
+  .primary-sidebar {
+    flex-basis: 30%;
+    margin: 15px;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #dadada;
+    .widget{
+      margin-bottom: 50px;
+    }
+    .widget_search {
+      overflow: hidden;
+      .search-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        .search {
+          flex: 1;
+          padding: 3px;
+          border: 1px solid #e8e8e8;
+          height: 34px;
+          transition: border-color ease-in-out .15s;
+          display: table-cell;
+          &:focus {
+            border-color: #66afe9;
+          }
+        }
+          button.btnSearch {
+            background-color: $gris-logo;
+            border: 1px solid transparent;
+            border-radius:4px;
+            border-color:$gris-logo;;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            transition:background-color 0.3s linear, border-color 0.3s linear;
+            width: 40px;
+            &:hover {
+              cursor: pointer;
+              background-color:$vert-logo;
+              border-color:$vert-logo;
+            }
+            &:focus {
+              outline: none;
+            }
+            .fa-search {
+              color: #ffffff;
+            }
+          }
+
+
+      }
+    }
+    .widget_join_us {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        li{
+          font-size:20px;
+          font-family: 'BreeW01', sans-serif;
+          margin-bottom:5px;
+          i{
+            margin-right :5px;
+          }
+        }
+
+
+      }
+    }
+  }
+  .content-area {
+    flex-basis:70%;
+    flex-shrink: 2;
+    margin-bottom:30px;
+    .article-loop{
+      margin: 15px;
+      padding: 10px;
+      background-color: #ffffff;
+      border: 1px solid #dadada;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .article-date {
+        font-size: 11px;
+        text-align: right;
+
+      }
+    }
+
+    }
+
+}

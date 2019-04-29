@@ -1,0 +1,44 @@
+.search-area {
+  margin: 15px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #dadada;
+}
+.search-user {
+  margin-left:15px;
+}
+.search-result-count {
+  margin-left:15px;
+  padding-bottom: 7px;
+  border-bottom:#c7c7c7 dashed 1px;
+}
+.img-responsive {
+  max-width: 100%;
+}
+.singleResult{
+  padding: 10px 0;
+  a{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    transition: opacity 1s ease;
+    &:hover {
+      opacity: 0.5;
+    }
+    .img-col {
+      flex-basis: 40%;
+      padding: 0 15px;
+    }
+    .content-col {
+      flex-shrink:3;
+      padding: 0 15px;
+      display: flex;
+      flex-direction: column;
+      .postDate {
+        color: #515151;
+        font-size : 11px;
+        align-self: flex-end;
+      }
+    }
+  }
+}

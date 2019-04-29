@@ -1,0 +1,122 @@
+/*
+Theme Name: Le Florain
+Author: Thibault Barrat
+Description: Template WordPress pour l'association Le Florain
+Version: 0.0.1
+Tags: bootstrap
+*/
+
+/* SASS variables */
+@import "theme/theme_variables";
+
+/*Fonts */
+@font-face {
+	font-family: "BreeW01";
+	font-style: normal;
+	font-weight: normal;
+	src: url("../fonts/BreeW01-Regular_ot.otf") format("opentype"), url("../fonts/BreeW01-Regular_ot.woff") format("woff"), url("../fonts/BreeW01-Regular_tt.ttf") format("truetype"), url("../fonts/BreeW01-Regular_tt.svg#BreeW01-Regular_tt") format("svg");
+}
+@font-face {
+	font-family: "BreeW02";
+	font-style: normal;
+	font-weight: bold;
+	src: url("../fonts/BreeW01-Bold_tt.eot?#iefix") format("embedded-opentype"), url("../fonts/BreeW01-Bold_ot.otf") format("opentype"), url("../fonts/BreeW01-Bold_ot.woff") format("woff"), url("../fonts/BreeW01-Bold_tt.ttf") format("truetype"), url("../fonts/BreeW01-Bold_tt.svg#BreeW01-Bold_tt") format("svg");
+}
+* {
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+}
+body {
+	background-color: #f3f3f3;
+	color: $text-color;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 100%;
+	margin: 0;
+
+}
+h1, h2, h3, h4, h5, h6 {
+	color: $text-color;
+	font-family: 'BreeW01', sans-serif;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 36px;;
+}
+h2 {
+	font-size: 30px;
+}
+h3 {
+	font-size: 24px;
+}
+h4 {
+	font-size: 20px;
+}
+h5 {
+	font-size: 16px;
+}
+h6 {
+	font-size: 14px;
+}
+p, li {
+	font-size: 15px;
+}
+.leftSide ul li > ul li {
+	font-size: 14px;
+}
+.leftSide ol li > ol li {
+	font-size: 14px;
+}
+a {
+	text-decoration: none;
+	color:darken($vert-logo,10%);
+	&:visited {
+		text-decoration: none;
+		color:darken($vert-logo,10%);
+	}
+	&:hover {
+		text-decoration: none;
+		color:$vert-logo;
+	}
+}
+.link-nostyle{
+	text-decoration:none;
+	color:inherit;
+	&:hover, &:visited {
+		text-decoration:none;
+		color:inherit;
+	}
+}
+#page-area {
+	min-height:100%;
+	position: relative;
+
+}
+#main-area {
+	padding-bottom: $footer-height;
+
+}
+
+/* Header */
+@import "theme/header";
+
+/* Footer */
+@import "theme/footer";
+
+/* Page */
+@import "theme/_style-page";
+
+/* Page de recherche */
+@import "theme/_style-search";
+
+/* Formulaire de contact */
+@import "theme/_style-contact";
+
+/* Calendrier évènement */
+@import "theme/_style-event";
+
+/* Carte */
+@import "theme/_style-map";

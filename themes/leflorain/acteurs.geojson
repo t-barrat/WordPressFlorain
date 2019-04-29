@@ -1,0 +1,87 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.150376, 48.740646]
+      },
+      "properties": {
+        "title": "La Chouette",
+        "icon": "monument",
+        "categorie": "Se nourrir",
+        "sous-categorie": "Épiceries",
+        "siteweb":"www.lachouettebio.fr",
+        "image":"lachouette.jpg",
+        "titre":"La Chouette BIO",
+        "comptoir":"oui",
+        "bref":"Magasin BIO",
+        "type":"Alimentation",
+        "desc":"Nous proposons une grande sélection de produits BIO en alimentaire et non alimentaire: fruits et légumes, épicerie sucrée et salée, produits en vrac, fromages à la coupe, pains, produits d'hygiène, cosmétiques, compléments alimentaires ... et bien sûr des produits locaux !",
+        "adresse":"ZAC Grand Air 14, rue du bois, 54390 Frouard",
+        "latitude":"6.150376",
+        "longitude":"48.740646",
+        "telephone":"09 72 58 65 21",
+        "message":"Du lundi au vendredi : 09h30 - 19h00. Le samedi : 09h00 - 19h00."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.697974, 6.178726]
+      },
+      "properties": {
+        "categorie": "Se nourrir",
+        "sous-categorie": "Épiceries",
+        "siteweb":"www.mrsimmsnancy.fr",
+        "image":"MrSimms.jpg",
+        "titre":"Mr Simms",
+        "bref":"Confiserie",
+        "type":"Confiserie",
+        "desc":"Mr Simms fait redécouvrir les confiseries aux petits et grands gourmands. Des ateliers fabriquent depuis 1891 quelques unes des sucreries que vous trouverez chez Mr Simms. Nous les avons visité et avons salivé devant les chaudrons en cuivre remplis de sucre bouilli, et les chocolats préparés et emballés à la main pour ne vous rapporter que le meilleur ! Nous avons aussi pour vous des confiseries sans sucre, sans gluten, sans lactose et sans matière animale.",
+        "adresse":"76 grande rue Nancy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.6257821472, 6.34754419327]
+      },
+      "properties": {
+        "categorie": "Se nourrir",
+        "sous-categorie": "Épiceries",
+        "siteweb":"www.lesmalicesdesuzette.fr",
+        "image":"LesMalicesDeSuzette.jpg",
+        "titre":"Malice de Suzette",
+        "bref":"Magasin de Producteurs",
+        "type":"Alimentation",
+        "desc":"Les Malices de Suzette est une sorte de boutique 'Vivante',un concept 100% Local à Dombasle-sur-Meurthe. L'activité principale est la vente en boutique et en ligne de produits du terroir de producteurs régionaux et objets d'artisanat d'art Lorrains. Et surtout, au coeur de ce projet, l'idée est de créer du lien entre les habitants et les acteurs locaux grâce à la rencontre, l'échange et le partage par le biais d'atelier et événements organisés au sein du magasin.",
+        "adresse":"Dombasle"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.68223421510, 6.20315551758]
+      },
+      "properties": {
+        "categorie": "Se nourrir",
+        "sous-categorie": "Épiceries",
+        "siteweb":"www.legoupilvert.fr",
+        "image":"biocoop.jpg",
+        "titre":"Biocoop Le Goupil Vert",
+        "comptoir":"oui",
+        "bref":"Magasin BIO",
+        "type":"Alimentation",
+        "desc":"Ouvert depuis janvier 2007, le magasin propose un grand choix alimentaire BIO, mais également des cosmétiques, un univers bébé, des articles pour la maison. C'est aussi un espace de vie, avec l'accueil d'associations et la mise à disposition d'une salle de réunion.",
+        "adresse":"34-38, rue Marcel Brot, Nancy",
+        "telephone":"03 83 39 01 99",
+        "message":"Le lundi : 14h00 - 19h00. Du mardi au jeudi : 09h30 - 12h30 / 14h00 - 19h00. Le vendredi : 09h30 - 19h00. Le samedi : 09h00 - 19h00."
+      }
+    }
+  ]
+}

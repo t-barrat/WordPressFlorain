@@ -1,0 +1,54 @@
+$text-color: #58585a;
+$vert-logo: #dadd30;
+$gris-logo: #70706f;
+
+
+$facebook-color: #3b5998;
+$twitter-color: #55acee;
+$youtube-color: #b31217;
+$linkedin-color: #0077b5;
+
+$footer-height: 140px;
+
+.text-white {
+	color: #ffffff !important;
+}
+
+.text-facebook
+ {
+	color: $facebook-color ;
+	&:visited {
+		color: $facebook-color;
+	}
+	&:hover {
+		color: lighten( $facebook-color, 20%);
+	}
+}
+.text-twitter
+ {
+	color: $twitter-color ;
+	&:visited {
+		color: $twitter-color;
+	}
+	&:hover {
+		color: lighten( $twitter-color, 20%);
+	}
+}
+.text-youtube {
+	color: $youtube-color ;
+	&:visited {
+		color: $youtube-color;
+	}
+	&:hover {
+		color: lighten( $youtube-color, 20%);
+	}
+}
+.text-linkedin {
+	color: $linkedin-color ;
+	&:visited {
+		color: $linkedin-color;
+	}
+	&:hover {
+		color: lighten( $linkedin-color, 20%);
+}
+}

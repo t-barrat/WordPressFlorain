@@ -1,0 +1,40 @@
+.tribe-bar-submit {
+  margin-left: 0px;
+  width: 35%;
+}
+.tribe-events-month {
+  .tribe-events-sub-nav {
+    a {
+      text-decoration:none;
+    	color:inherit;
+      text-transform: capitalize;
+    	&:hover, &:visited {
+    		text-decoration:none;
+    		color:inherit;
+    	}
+    }
+  }
+}
+.tribe-events-list-widget {
+  .tribe-list-widget {
+    padding:0;
+    li{
+      margin:0 1rem 10px 1rem;
+      border-left: 2px solid $text-color;
+      padding:0 0 0 5px;
+    }
+    .tribe-event-title {
+      font-weight: normal;
+      margin:0;
+    }
+  }
+  a {
+    text-decoration:none;
+    color:inherit;
+    text-transform: capitalize;
+    &:hover, &:visited {
+      text-decoration:none;
+      color:inherit;
+    }
+  }
+}

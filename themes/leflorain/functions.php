@@ -68,3 +68,9 @@ require_once( 'inc/widget-search-class.php' ); // Widget de recherche
 require_once( 'inc/widget-join-us-class.php' ); // Widget "nous rejoindre"
 require_once( 'inc/widget-don-class.php' ); // Widget "Faire un don"
 require_once( 'inc/widget-map-class.php' ); // Widget de cartographie
+
+/*
+SHORTCODES personnalisés
+*/
+function shortcodeperso_1() {echo ' Texte à écrire ';}
+add_shortcode('short1', 'shortcodeperso_1');

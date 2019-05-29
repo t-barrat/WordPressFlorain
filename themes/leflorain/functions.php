@@ -72,5 +72,7 @@ require_once( 'inc/widget-map-class.php' ); // Widget de cartographie
 /*
 SHORTCODES personnalisés
 */
-function shortcodeperso_1() {echo ' Texte à écrire ';}
+function shortcodeperso_1() {
+    echo ' Texte à écrire ';
+}
 add_shortcode('short1', 'shortcodeperso_1');

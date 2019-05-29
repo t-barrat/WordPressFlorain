@@ -12,7 +12,7 @@ add_shortcode( 'MBN_bookingactivities_list', 'MBN_bookacti_shortcode_bookings_li
 add_shortcode( 'MBN2_bookingactivities_list', 'MBN2_bookacti_shortcode_bookings_list' );
 add_shortcode( 'MBN_connection', 'MBN_connection' );
 add_shortcode( 'MBN_export', 'MBN_export' );
-
+add_shortcode( 'MBN_export2', 'MBN_export2' );
 
 
 /**
@@ -553,7 +553,7 @@ Cliquez ici pour vous déconnecter.					</a>
 
 
 /**
- * MBN
+ * MBN exporte toutes les resas, par evt
  * 
  * 
  * 
@@ -575,11 +575,12 @@ function MBN_export() {
 	$fin="";
 	$fin_prec="";
 	$benevole = "";
-	$firstLine = true;
 	$i = 0;
+
+    $tab1 = array(array());
+	
 	
 	while (($line = fgetcsv($f)) !== false) {
-		$i = $i+1;
 		
 		$evt = $line[0];
 		$debut = $line[1];
@@ -589,32 +590,145 @@ function MBN_export() {
 		$mois = substr($debut,5,2);
 		$annee = substr($debut,0,4);
 		
-		if ($i > 1){
+		if ($i > 0){
+  	array_push($tab1,array($annee,$mois,$jour,$evt,substr($debut,11,5),substr($fin,11,5),$benevole));
+        }
+		$i = $i + 1;
+	}
+
+	fclose($f);
 	
+	$evt = "";
+	$evt_prec="";
+	$debut = "";
+	$debut_prec="";
+	$fin="";
+	$fin_prec="";
+	$benevole = "";
 	
+//	unset($tab1[0]);	
+	
+	$now = new DateTime();
+//	echo $now->format('Y-m-d');
+
+	sort($tab1);
+	foreach($tab1 as $ligne){
+
+		$annee = $ligne[0];
+		$mois = $ligne[1];
+		$jour = $ligne[2];
+		$evt = $ligne[3];
+		$debut = $ligne[4];
+		$fin = $ligne[5];
+		$benevole = $ligne[6];
+
+		// EVT du futur uniquement
+		if(($annee.'-'.$mois.'-'.$jour) > $now->format('Y-m-d')){
+		
+		
 		if($evt != $evt_prec){
 			?> <h1> <?php  
 			echo $evt . " (" . $jour ."/" . $mois . "/" . $annee . ")";
-	   		?> </h1><br/> <?php
+	   		?> </h1> <?php
 		}
 		if($debut === $debut_prec && $fin === $fin_prec){
-			echo $benevole;
+			echo " + " . $benevole;
 		}else {
-			echo substr($debut,11,5) . " - " . substr($fin,11,5);
+			?> <br/> <?php
+			echo $debut . " - " . $fin;
 			echo " => "  . $benevole;		
 		}
-		?> <br/> <?php
-		}
+		} // n'affiche QUE les evts du futur
+		
 		$evt_prec = $evt;
 		$debut_prec = $debut;
 		$fin_prec = $fin;
 	
-		
+	}
+
+	?> <br/> <?php
+	
 }
+/*
+ * Exporte toutes les réservations, par bénévole
+ * 
+ */
+function MBN_export2() {
+	
+// Create a table from a csv file 
 
-fclose($f);
+	$f = fopen("http://benevoles.florain.fr/booking-activities-bookings.csv?action=bookacti_export_bookings&key=c148db3b6be7d899daae4cfda163d196&lang=fr&status%5B1%5D=booked&group_by=booking_group&per_page=20&columns%5B1%5D=event_title&columns%5B2%5D=start_date&columns%5B3%5D=end_date&columns%5B0%5D=customer_display_name", "r");
+	
 
+	$evt = "";
+	$evt_prec="";
+	$debut = "";
+	$debut_prec="";
+	$fin="";
+	$fin_prec="";
+	$benevole = "";
+	$i = 0;
 
+    $tab1 = array(array());
+	
+	
+	while (($line = fgetcsv($f)) !== false) {
+		
+		$evt = $line[0];
+		$debut = $line[1];
+		$fin=$line[2];
+		$benevole = $line[3];
+		$jour = substr($debut,8,2);
+		$mois = substr($debut,5,2);
+		$annee = substr($debut,0,4);
+		
+		if ($i > 0){
+  	array_push($tab1,array($benevole,$annee,$mois,$jour,$evt,substr($debut,11,5),substr($fin,11,5)));
+        }
+		$i = $i + 1;
+	}
+
+	fclose($f);
+	
+	$evt = "";
+	$evt_prec="";
+	$debut = "";
+	$fin="";
+	$benevole = "";
+	$benevole_prec = "";
+	
+//	unset($tab1[0]);	
+	
+	$now = new DateTime();
+//	echo $now->format('Y-m-d');
+
+	sort($tab1);
+	foreach($tab1 as $ligne){
+
+		$benevole = $ligne[0];
+		$annee = $ligne[1];
+		$mois = $ligne[2];
+		$jour = $ligne[3];
+		$evt = $ligne[4];
+		$debut = $ligne[5];
+		$fin = $ligne[6];
+		
+		if($benevole != $benevole_prec){
+			?> <h1> <?php  
+			echo $benevole
+	   		?> </h1> <?php
+		} 
+			?> <br/> <?php
+		// EVT du futur uniquement
+		if(($annee.'-'.$mois.'-'.$jour) > $now->format('Y-m-d')){
+			echo $evt.' (' . $jour .'-'.$mois.'-'.$annee . ') : ';
+			echo $debut . " - " . $fin;
+		}
+		$benevole_prec = $benevole;
+	}
+
+	?> <br/> <?php
+	
 }
 
 /**
